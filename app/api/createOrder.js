@@ -5,7 +5,7 @@ const createOrder = async (req, res) => {
     return res.status(405).end(); // Method Not Allowed
   }
 
-  const { items, totalPrice } = req.body;
+  const { items } = req.body;
 
   try {
     const client = await clientPromise;
@@ -15,7 +15,6 @@ const createOrder = async (req, res) => {
       _id: new ObjectId(),
       status: 'pending',
       items,
-      totalPrice,
       timestamp: new Date(),
       expiredAt: new Date(new Date().getTime() + 30 * 60 * 1000), // Expires in 30 minutes
     };
