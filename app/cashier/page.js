@@ -1,7 +1,12 @@
+import insertData from '@/insertOne';
+
 export default function HomePage() {
   return (
-    <div>
-      <h1>API URL: {process.env.MONGODB_URI} that is true env var</h1>
-    </div>
+    <>
+      <div>
+        <h1>that is true env var</h1>
+        <button onclick={() => insertData()}>insert data</button>
+      </div>
+    </>
   );
 }
